@@ -6,7 +6,7 @@ const doc = {
         description: 'API for managing books and authors (CSE 341 | BYU-I)'
     },
     host: process.env.NODE_ENV === 'production'
-        ? 'cse-341-project1-w4pz.onrender.com'
+        ? 'cse-341-project2-u397.onrender.com'
         : 'localhost:8080',
     schemes: process.env.NODE_ENV === 'production'
         ? ['https']
