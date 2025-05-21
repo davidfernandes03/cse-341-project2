@@ -1,0 +1,217 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Library API",
+    "description": "API for managing books and authors (CSE 341 | BYU-I)",
+    "version": "1.0.0"
+  },
+  "host": "cse-341-project1-w4pz.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/books/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/authors/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/authors/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Book": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "example": "The Lord of the Rings"
+        },
+        "author": {
+          "type": "string",
+          "example": "J.R.R. Tolkien"
+        },
+        "genre": {
+          "type": "string",
+          "example": "Fantasy"
+        },
+        "publishedYear": {
+          "type": "number",
+          "example": 1954
+        },
+        "pages": {
+          "type": "number",
+          "example": 1178
+        },
+        "publisher": {
+          "type": "string",
+          "example": "HarperCollins"
+        },
+        "language": {
+          "type": "string",
+          "example": "English"
+        },
+        "available": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "Author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "J.R.R. Tolkien"
+        },
+        "birthYear": {
+          "type": "number",
+          "example": 1892
+        },
+        "nationality": {
+          "type": "string",
+          "example": "British"
+        },
+        "booksWritten": {
+          "type": "array",
+          "example": [
+            "The Hobbit",
+            "The Lord of the Rings"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
