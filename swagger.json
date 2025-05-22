@@ -13,16 +13,36 @@
   "paths": {
     "/books/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Books"
+        ],
+        "description": "Get all books",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "List of books"
           }
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Books"
+        ],
+        "description": "Create a new book",
+        "parameters": [
+          {
+            "name": "book",
+            "in": "body",
+            "description": "Book data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        ],
         "responses": {
+          "201": {
+            "description": "Book successfully created"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -31,66 +51,110 @@
     },
     "/books/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Books"
+        ],
+        "description": "Get book by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Book ID"
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "Book details"
           }
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Books"
+        ],
+        "description": "Update a book by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Book ID"
+          },
+          {
+            "name": "book",
+            "in": "body",
+            "description": "Updated book data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
           }
         ],
         "responses": {
+          "200": {
+            "description": "Book updated"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Books"
+        ],
+        "description": "Delete a book by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Book ID"
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "Book deleted"
           }
         }
       }
     },
     "/authors/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Authors"
+        ],
+        "description": "Get all authors",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "List of authors"
           }
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Authors"
+        ],
+        "description": "Create a new author",
+        "parameters": [
+          {
+            "name": "author",
+            "in": "body",
+            "description": "Author data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        ],
         "responses": {
+          "201": {
+            "description": "Author successfully created"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
@@ -99,50 +163,74 @@
     },
     "/authors/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Authors"
+        ],
+        "description": "Get author by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Author ID"
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "Author details"
           }
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Authors"
+        ],
+        "description": "Update an author by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Author ID"
+          },
+          {
+            "name": "author",
+            "in": "body",
+            "description": "Updated author data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
           }
         ],
         "responses": {
+          "200": {
+            "description": "Author updated"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Authors"
+        ],
+        "description": "Delete an author by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Author ID"
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "Author deleted"
           }
         }
       }

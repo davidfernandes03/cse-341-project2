@@ -22,7 +22,7 @@ const validate = (req, res, next) => {
     const errors = validationResult(req);
     
     if (!errors.isEmpty()) {
-        const extracted = error.array().map(err => ({
+        const extracted = errors.array().map(err => ({
             [err.param || err.path]: err.msg
         }));
         return res.status(422).json({ errors: extracted });
