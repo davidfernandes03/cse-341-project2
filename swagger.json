@@ -10,7 +10,35 @@
   "schemes": [
     "https"
   ],
+  "securityDefinitions": {
+    "auth0": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://dev-k1mfqbjspokyxg0f.us.auth0.com/authorize",
+      "scopes": {}
+    }
+  },
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/books/": {
       "get": {
         "tags": [
@@ -301,5 +329,10 @@
         }
       }
     }
-  }
+  },
+  "security": [
+    {
+      "auth0": []
+    }
+  ]
 }

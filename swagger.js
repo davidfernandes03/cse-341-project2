@@ -28,7 +28,18 @@ const doc = {
             nationality: 'British',
             booksWritten: ['The Hobbit', 'The Lord of the Rings']
         }
-    }
+    },
+    securityDefinitions: {
+        auth0: {
+            type: 'oauth2',
+            flow: 'implicit',
+            authorizationUrl: 'https://dev-k1mfqbjspokyxg0f.us.auth0.com/authorize',
+            scopes: {}
+        }
+    },
+    security: [
+        { auth0: [] }
+    ]
 };
 
 const outputFile = './swagger.json';
